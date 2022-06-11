@@ -12,7 +12,7 @@ public enum MovieRequest {
     case details(id: Int)
     case recommendations(id: Int)
     case images(id: Int)
-    case popular
+    case popular(page: Int)
     case topRated
 }
 
@@ -43,14 +43,22 @@ extension MovieRequest: TargetType {
     }
     
     public var task: Task {
+        guard let apiKey = ProcessInfo.processInfo.environment["API_KEY"] else {
+            fatalError("Missing environment variable API_KEY")
+        }
+        
+        var parameters: [String:String] = ["api_key": apiKey]
         switch self {
-        case .details, .recommendations, .images, .popular, .topRated:
-            return .requestParameters(parameters: ["api_key": "a070f77e96f1633405ab20afb856bd2e"], encoding: URLEncoding.default)
+        case .popular(let page):
+            parameters["page"] = String(page)
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
+        case .details, .recommendations, .images, .topRated:
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
         }
     }
     
     public var headers: [String : String]? {
-        return [:]
+        return nil
     }
 
 }

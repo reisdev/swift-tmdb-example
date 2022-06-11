@@ -38,4 +38,24 @@ struct MovieService: MovieServiceProtocol {
             return Disposables.create()
         }
     }
+    
+    func getPopular(page: Int = 1) -> Observable<PaginatedMovieResponse> {
+        return Observable.create { observer in
+            provider.request(.popular(page: page)) { result in
+                switch result {
+                case .success(let response):
+                    do {
+                        let popular = try response.map(PaginatedMovieResponse.self)
+                        
+                        observer.onNext(popular)
+                    } catch {
+                        observer.onError(error)
+                    }
+                case .failure(let error):
+                    observer.onError(error)
+                }
+            }
+            return Disposables.create()
+        }
+    }
 }

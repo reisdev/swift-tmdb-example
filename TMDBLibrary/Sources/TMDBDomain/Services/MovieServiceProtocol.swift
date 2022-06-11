@@ -10,4 +10,5 @@ import RxSwift
 
 public protocol MovieServiceProtocol {
     func getDetails(from id: Int) -> Observable<Movie>
+    func getPopular(page: Int) -> Observable<PaginatedMovieResponse>
 }

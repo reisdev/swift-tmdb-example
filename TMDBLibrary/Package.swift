@@ -15,7 +15,6 @@ let package = Package(
             targets: ["TMDBServices"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "5.6.1")),
         .package(url: "https://github.com/Moya/Moya.git", .upToNextMajor(from: "15.0.0")),
         .package(url: "https://github.com/ReactiveX/RxSwift.git", .exact("6.5.0"))
     ],
@@ -24,7 +23,7 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "TMDBDomain",
-            dependencies: ["Alamofire", "Moya", "RxSwift"]),
+            dependencies: ["Moya", "RxSwift"]),
         .target(
             name: "TMDBServices",
             dependencies: ["TMDBDomain", "Moya", "RxSwift"]),
