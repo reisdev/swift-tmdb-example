@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CEB9DF242867C6FF00214E0D /* MovieCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB9DF232867C6FF00214E0D /* MovieCard.swift */; };
+		CEB9DF272867E91E00214E0D /* TMDBDomain in Frameworks */ = {isa = PBXBuildFile; productRef = CEB9DF262867E91E00214E0D /* TMDBDomain */; };
+		CEB9DF292867E91E00214E0D /* TMDBServices in Frameworks */ = {isa = PBXBuildFile; productRef = CEB9DF282867E91E00214E0D /* TMDBServices */; };
+		CEB9DF2F2867F02900214E0D /* PopularMoviesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB9DF2E2867F02900214E0D /* PopularMoviesScreen.swift */; };
+		CEB9DF312867F66700214E0D /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB9DF302867F66700214E0D /* CircularProgressView.swift */; };
+		CEC6C68F28554B9B00BB668E /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = CEC6C68E28554B9B00BB668E /* RxCocoa */; };
+		CEC6C69128554B9B00BB668E /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CEC6C69028554B9B00BB668E /* RxSwift */; };
 		CED760F32853D1D900CBA16A /* TMDBApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED760EF2853D1D900CBA16A /* TMDBApp.swift */; };
 		CED760F42853D1D900CBA16A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CED760F12853D1D900CBA16A /* Preview Assets.xcassets */; };
 		CED760F52853D1D900CBA16A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED760F22853D1D900CBA16A /* ContentView.swift */; };
@@ -34,11 +41,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CEB9DF232867C6FF00214E0D /* MovieCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCard.swift; sourceTree = "<group>"; };
+		CEB9DF252867E90200214E0D /* TMDBLibrary */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TMDBLibrary; sourceTree = "<group>"; };
+		CEB9DF2E2867F02900214E0D /* PopularMoviesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesScreen.swift; sourceTree = "<group>"; };
+		CEB9DF302867F66700214E0D /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		CED760EF2853D1D900CBA16A /* TMDBApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDBApp.swift; sourceTree = "<group>"; };
 		CED760F12853D1D900CBA16A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CED760F22853D1D900CBA16A /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CED760F62853D21100CBA16A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CED760F82853DC8400CBA16A /* TMDBLibrary */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TMDBLibrary; sourceTree = "<group>"; };
 		CEFBA4882852AFE3001223AA /* TMDBApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDBApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEFBA4982852AFE6001223AA /* TMDBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TMDBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEFBA49C2852AFE6001223AA /* TMDBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBTests.swift; sourceTree = "<group>"; };
@@ -52,6 +62,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEC6C69128554B9B00BB668E /* RxSwift in Frameworks */,
+				CEB9DF272867E91E00214E0D /* TMDBDomain in Frameworks */,
+				CEC6C68F28554B9B00BB668E /* RxCocoa in Frameworks */,
+				CEB9DF292867E91E00214E0D /* TMDBServices in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,11 +86,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CEB9DF1C2867C44600214E0D /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				CEB9DF252867E90200214E0D /* TMDBLibrary */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		CEB9DF222867C6F100214E0D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CEB9DF232867C6FF00214E0D /* MovieCard.swift */,
+				CEB9DF302867F66700214E0D /* CircularProgressView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		CEB9DF2D2867F01700214E0D /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				CEB9DF2E2867F02900214E0D /* PopularMoviesScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		CEC6C69428554E8000BB668E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CED760EE2853D1D900CBA16A /* TMDBApp */ = {
 			isa = PBXGroup;
 			children = (
-				CED760F62853D21100CBA16A /* Assets.xcassets */,
+				CEB9DF2D2867F01700214E0D /* Screens */,
 				CED760F02853D1D900CBA16A /* Preview Content */,
+				CEB9DF222867C6F100214E0D /* Components */,
+				CED760F62853D21100CBA16A /* Assets.xcassets */,
 				CED760EF2853D1D900CBA16A /* TMDBApp.swift */,
 				CED760F22853D1D900CBA16A /* ContentView.swift */,
 			);
@@ -94,11 +142,12 @@
 		CEFBA47F2852AFE3001223AA = {
 			isa = PBXGroup;
 			children = (
-				CEFBA4B52852B0F7001223AA /* Packages */,
+				CEB9DF1C2867C44600214E0D /* Packages */,
 				CED760EE2853D1D900CBA16A /* TMDBApp */,
 				CEFBA49B2852AFE6001223AA /* TMDBTests */,
 				CEFBA4A52852AFE6001223AA /* TMDBUITests */,
 				CEFBA4892852AFE3001223AA /* Products */,
+				CEC6C69428554E8000BB668E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,14 +178,6 @@
 			path = TMDBUITests;
 			sourceTree = "<group>";
 		};
-		CEFBA4B52852B0F7001223AA /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				CED760F82853DC8400CBA16A /* TMDBLibrary */,
-			);
-			name = Packages;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -153,6 +194,12 @@
 			dependencies = (
 			);
 			name = TMDBApp;
+			packageProductDependencies = (
+				CEC6C68E28554B9B00BB668E /* RxCocoa */,
+				CEC6C69028554B9B00BB668E /* RxSwift */,
+				CEB9DF262867E91E00214E0D /* TMDBDomain */,
+				CEB9DF282867E91E00214E0D /* TMDBServices */,
+			);
 			productName = TMDB;
 			productReference = CEFBA4882852AFE3001223AA /* TMDBApp.app */;
 			productType = "com.apple.product-type.application";
@@ -225,6 +272,9 @@
 				Base,
 			);
 			mainGroup = CEFBA47F2852AFE3001223AA;
+			packageReferences = (
+				CEC6C68D28554B9B00BB668E /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = CEFBA4892852AFE3001223AA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -269,6 +319,9 @@
 			files = (
 				CED760F52853D1D900CBA16A /* ContentView.swift in Sources */,
 				CED760F32853D1D900CBA16A /* TMDBApp.swift in Sources */,
+				CEB9DF2F2867F02900214E0D /* PopularMoviesScreen.swift in Sources */,
+				CEB9DF312867F66700214E0D /* CircularProgressView.swift in Sources */,
+				CEB9DF242867C6FF00214E0D /* MovieCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,6 +642,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CEC6C68D28554B9B00BB668E /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CEB9DF262867E91E00214E0D /* TMDBDomain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TMDBDomain;
+		};
+		CEB9DF282867E91E00214E0D /* TMDBServices */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TMDBServices;
+		};
+		CEC6C68E28554B9B00BB668E /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEC6C68D28554B9B00BB668E /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		CEC6C69028554B9B00BB668E /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEC6C68D28554B9B00BB668E /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CEFBA4802852AFE3001223AA /* Project object */;
 }

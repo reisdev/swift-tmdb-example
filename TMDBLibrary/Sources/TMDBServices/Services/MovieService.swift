@@ -10,7 +10,7 @@ import TMDBDomain
 import Moya
 import RxSwift
 
-struct MovieService: MovieServiceProtocol {
+public struct MovieService: MovieServiceProtocol {
     
     let provider = MoyaProvider<MovieRequest>()
     
@@ -18,7 +18,7 @@ struct MovieService: MovieServiceProtocol {
        return MovieService()
     }()
     
-    func getDetails(from id: Int) -> Observable<Movie> {
+    public func getDetails(from id: Int) -> Observable<Movie> {
         return Observable.create { observer in
             provider.request(.details(id: id)) { result in
                 switch result {
@@ -39,7 +39,7 @@ struct MovieService: MovieServiceProtocol {
         }
     }
     
-    func getPopular(page: Int = 1) -> Observable<PaginatedMovieResponse> {
+    public func getPopular(page: Int = 1) -> Observable<PaginatedMovieResponse> {
         return Observable.create { observer in
             provider.request(.popular(page: page)) { result in
                 switch result {
