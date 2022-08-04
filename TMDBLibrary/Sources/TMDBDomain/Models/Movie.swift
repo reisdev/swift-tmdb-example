@@ -18,7 +18,8 @@ public struct Movie: Codable, Identifiable {
     public var overview: String
     public var popularity: Double
     public var voteCount: Int
-    public var poster_path: String?
+    public var posterPath: String
+    public var backdropPath: String
     public var releaseDate: String
     public var genres: [Genre]? = []
     public var genreIds: [Int]? = []
@@ -28,20 +29,10 @@ public struct Movie: Codable, Identifiable {
         }
     }
     
-    public var posterURL: URL? {
-        // Resolve a URL da imagem
-        get {
-            guard let path = self.poster_path else { return nil }
-            let urlString = String(format:"%@%@","https://image.tmdb.org/t/p/w500", path)
-            return URL(string: urlString)
-        }
-        set(path) {
-            self.poster_path = path?.absoluteString
-        }
-    }
-    
     enum CodingKeys: String, CodingKey {
-        case id, title, popularity, overview, genres, poster_path
+        case id, title, popularity, overview, genres
+        case backdropPath = "backdrop_path"
+        case posterPath = "poster_path"
         case voteCount = "vote_count"
         case genreIds = "genre_ids"
         case releaseDate = "release_date"

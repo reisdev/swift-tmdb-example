@@ -6,9 +6,16 @@
 //
 
 import SwiftUI
+import TMDBDomain
+import TMDBServices
 
 @main
 struct TMDBApp: App {
+    
+    init() {
+        Constants.shared.load()
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

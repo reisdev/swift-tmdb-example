@@ -12,7 +12,7 @@ import RxSwift
 
 public struct MovieService: MovieServiceProtocol {
     
-    let provider = MoyaProvider<MovieRequest>()
+    let provider = MoyaProvider<MovieRequest>(plugins: [NetworkLoggerPlugin(configuration: .init(logOptions: .verbose))])
     
     public static var shared: MovieServiceProtocol = {
        return MovieService()
@@ -25,7 +25,6 @@ public struct MovieService: MovieServiceProtocol {
                 case .success(let response):
                     do {
                         let movie = try response.map(Movie.self)
-
                         observer.onNext(movie)
                     } catch {
                         observer.onError(error)
@@ -34,7 +33,6 @@ public struct MovieService: MovieServiceProtocol {
                     observer.onError(error)
                 }
             }
-            
             return Disposables.create()
         }
     }
@@ -46,7 +44,6 @@ public struct MovieService: MovieServiceProtocol {
                 case .success(let response):
                     do {
                         let popular = try response.map(PaginatedMovieResponse.self)
-                        
                         observer.onNext(popular)
                     } catch {
                         observer.onError(error)
